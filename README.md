@@ -6,6 +6,11 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 
 [https://springonetour.io/sessions/scaling-your-spring-boot-app-to-zero](https://springonetour.io/sessions/scaling-your-spring-boot-app-to-zero)
 
+
+## Slides
+
+> TBD
+
 ## Tools to install
 
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
@@ -22,12 +27,26 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 
 1. [Native build with TAP](TAP-native-build.md)
 
+## Challenge
+
+1. [Tanzu Academy - Developer Sandbox Challenge](Sandbox-challenge.md)
+
 ### JVM Checkpoint/Restore
 
 1. [Getting started with JVM Checkpoint/Restore builds](JVM-checkpoint-restore.md)
 1. [Using JVM Checkpoint/Restore on Knative](Knative-checkpoint-restore.md)
 
 ## Links
+
+### JVM Checkpoint/Restore demo app
+
+- https://github.com/trisberg/hello-world
+
+This app has instructions for running it:
+- locally using Docker
+- kubernetes deployment/service
+    - including [notes](https://github.com/trisberg/hello-world/blob/main/keda/README.md) for scaling with Keda
+- knative service
 
 ### Tanzu Academy - Developer Sandbox
 
