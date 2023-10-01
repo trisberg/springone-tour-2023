@@ -80,7 +80,13 @@ Since the CRaC feature relies on CRIU support in the Linux kernel, and we want t
 
 > Note: The processor architecture needs to match the OpenJDK implementation, so we need to pass in an `ARCH` argument with the architecture. We need to specify `aarch64` for ARM based systems like Macs with M1/M2 chips or `x64` for AMD/Intel non-ARM systems.
 
-Create a `Dockerfile` file in the root of the project with this content:
+Create a `Dockerfile` file in the root of the project:
+
+```sh
+touch Dockerfile
+```
+
+then, add this content:
 
 ```
 FROM ubuntu:22.04
@@ -118,10 +124,7 @@ mkdir docker
 
 Create the empty `docker/entrypoint.sh` file:
 
-```sh
-touch docker/entrypoint.sh
-```
-
+docker volume rm cracvol
 Next, edit the `docker/entrypoint.sh` file and add this content:
 
 ```
@@ -179,7 +182,7 @@ When the image is built, we can run it locally. We need to define a volume to st
 ```sh
 docker run -it --rm -p 8080:8080 -e CRAC_FILES_DIR=/crac/demo/0.0.1 --name demo \
   --mount source=cracvol,target=/crac \
-  --cap-add CHECKPOINT_RESTORE --cap-add NET_ADMIN --cap-add SYS_PTRACE \
+  --cap-add CHECKPOINT_RESTORE --cap-add NET_ADMIN --cap-add SYS_PTRACE --cap-add SYS_ADMIN \
   springdeveloper/demo:0.0.1
 ```
 
