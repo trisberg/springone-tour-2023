@@ -14,17 +14,17 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 ## Tools to install
 
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
-1. [Tanzu CLI](https://github.com/vmware-tanzu/tanzu-cli/blob/main/docs/quickstart/install.md#from-the-binary-releases-in-github-project)
-1. [TAP CLI plugins](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.6/tap/install-tanzu-cli.html#install-tanzu-cli-plugins-5)
 1. [Carvel](https://carvel.dev/)
-1. [VS Code](https://code.visualstudio.com/download)
-1. [VS Code - Tanzu Developer Tools](https://marketplace.visualstudio.com/items?itemName=vmware.tanzu-dev-tools)
-1. [VS Code - Tanzu App Accelerator](https://marketplace.visualstudio.com/items?itemName=vmware.tanzu-app-accelerator)
+1. [Helm](https://helm.sh/docs/intro/install/)
+1. [Knative CLI](https://knative.dev/docs/client/install-kn/)
+1. [Knative quickstart CLI plugin](https://github.com/knative-extensions/kn-plugin-quickstart#kn-plugin-quickstart)
+1. [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 
 ## Demos
 
 ### GraalVM Native
 
+1. [Spring PatClinic as native build as Knative service](PetClinic-native-on-knative.md)
 1. [Native build with TAP](TAP-native-build.md)
 
 ## Challenge
@@ -34,7 +34,6 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 ### JVM Checkpoint/Restore
 
 1. [Getting started with JVM Checkpoint/Restore builds](JVM-checkpoint-restore.md)
-1. [Using JVM Checkpoint/Restore on Knative](Knative-checkpoint-restore.md)
 
 ## Links
 
