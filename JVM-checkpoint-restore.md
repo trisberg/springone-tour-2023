@@ -6,14 +6,14 @@ Spring reference docs has some coverage for [JVM Checkpoint Restore](https://doc
 
 ## Creating the project to use
 
-We will use a snapshot version of Spring Boot and Spring Framework that has improved support for JVM Checkpoint/Restore.
+We will use a milestone version of Spring Boot and Spring Framework that has improved support for JVM Checkpoint/Restore.
 
 > Note: You need to have `curl` installed
 
 We can use [start.spring.io](start.spring.io) to generate a new project to use:
 
 ```sh
-curl https://start.spring.io/starter.zip -d "type=maven-project&language=java&bootVersion=3.2.0-SNAPSHOT&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo project for Spring Boot&packageName=com.example.demo&packaging=jar&javaVersion=17&dependencies=web,actuator" -o demo.zip
+curl https://start.spring.io/starter.zip -d "type=maven-project&language=java&bootVersion=3.2.0-M3&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo project for Spring Boot&packageName=com.example.demo&packaging=jar&javaVersion=17&dependencies=web,actuator" -o demo.zip
 ```
 
 Extract the project 
@@ -124,7 +124,10 @@ mkdir docker
 
 Create the empty `docker/entrypoint.sh` file:
 
-docker volume rm cracvol
+```sh
+touch docker/entrypoint.sh
+```
+
 Next, edit the `docker/entrypoint.sh` file and add this content:
 
 ```
@@ -167,6 +170,12 @@ esac
 echo "Using CRaC enabled JDK with arch $arch"
 ./mvnw clean package -DskipTests --no-transfer-progress
 docker build -t springdeveloper/demo:0.0.1 --build-arg ARCH=$arch .
+```
+
+Make the script executable:
+
+```sh
+chmod +x build.sh
 ```
 
 We can now run a build:
