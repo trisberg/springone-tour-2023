@@ -56,3 +56,5 @@ This app has instructions for running it:
 ### This repo
 
 - https://github.com/trisberg/springone-tour-2023
+
+<img src="images/springone-tour-2023.png" alt="QR Code" width="300"/>
