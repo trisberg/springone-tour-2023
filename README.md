@@ -9,7 +9,7 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 
 ## Slides
 
-> TBD
+- [SpringOne Tour 2023: Scaling Your Spring Boot App to Zero](https://github.com/trisberg/springone-tour-2023/blob/main/SpringOne%20Tour%202023_%20Scaling%20Your%20Spring%20Boot%20App%20to%20Zero.pdf)
 
 ## Tools to install
 
@@ -36,6 +36,14 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 1. [Getting started with JVM Checkpoint/Restore builds](JVM-checkpoint-restore.md)
 
 ## Links
+
+### Project CRaC GitHub docs
+
+- https://github.com/CRaC/docs#crac
+
+### Spring Checkpoint Restore Smoke Tests 
+
+- https://github.com/spring-projects/spring-checkpoint-restore-smoke-tests
 
 ### JVM Checkpoint/Restore demo app
 
