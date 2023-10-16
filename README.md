@@ -24,7 +24,7 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 
 ### GraalVM Native
 
-1. [Spring PatClinic as native build as Knative service](PetClinic-native-on-knative.md)
+1. [Spring PetClinic as native build as Knative service](PetClinic-native-on-knative.md)
 1. [Native build with TAP](TAP-native-build.md)
 
 ## Challenge
