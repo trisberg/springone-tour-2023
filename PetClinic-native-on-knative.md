@@ -38,8 +38,10 @@ We want to use a Prostgres database so we need to set that profile when building
 
 Set the registry and repo to use for the built image:
 
+> When using kind on your local machine you can use `dev.local` prefix and load the image into to your cluster thereby bypassing a public registry.
+
 ```sh
-export IMAGE_NAME=docker.io/springdeveloper/spring-petclinic:3.1.0-SNAPSHOT
+export IMAGE_NAME=dev.local/spring-petclinic:3.1.0-SNAPSHOT
 ```
 
 ### Change builder when using a Mac with Apple Silicon
@@ -73,7 +75,7 @@ Add an additional profile to update the entry for `spring-boot-maven-plugin` usi
 ./mvnw -Pnative -Dmaven.test.skip=true \
   -Dspring-boot.aot.jvmArguments='-Dspring.profiles.active=postgres' \
   -Dspring-boot.build-image.imageName=$IMAGE_NAME \
-  spring-boot:build-image 
+  spring-boot:build-image
 ```
 
 ### Build on ARM (aarch64) based system
@@ -82,13 +84,15 @@ Add an additional profile to update the entry for `spring-boot-maven-plugin` usi
 ./mvnw -Pnative,arm -Dmaven.test.skip=true \
   -Dspring-boot.aot.jvmArguments='-Dspring.profiles.active=postgres' \
   -Dspring-boot.build-image.imageName=$IMAGE_NAME \
-  spring-boot:build-image 
+  spring-boot:build-image
 ```
 
-### Push image to registry
+### Load image into cluster
+
+> You could use your own registry account instead of `dev.local` and push the image to your preferred registry.
 
 ```sh
-docker push $IMAGE_NAME
+kind load --name knative docker-image $IMAGE_NAME
 ```
 
 ## Create the Postgres database
@@ -118,7 +122,6 @@ spec:
       containers:
       - name: workload
         image: $IMAGE_NAME
-        imagePullPolicy: Always
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "postgres"
