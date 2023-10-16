@@ -169,7 +169,7 @@ case $(uname -m) in
 esac
 echo "Using CRaC enabled JDK with arch $arch"
 ./mvnw clean package -DskipTests --no-transfer-progress
-docker build -t springdeveloper/demo:0.0.1 --build-arg ARCH=$arch .
+docker build -t dev.local/demo:0.0.1 --build-arg ARCH=$arch .
 ```
 
 Make the script executable:
@@ -192,7 +192,7 @@ When the image is built, we can run it locally. We need to define a volume to st
 docker run -it --rm -p 8080:8080 -e CRAC_FILES_DIR=/crac/demo/0.0.1 --name demo \
   --mount source=cracvol,target=/crac \
   --cap-add CHECKPOINT_RESTORE --cap-add NET_ADMIN --cap-add SYS_PTRACE --cap-add SYS_ADMIN \
-  springdeveloper/demo:0.0.1
+  dev.local/demo:0.0.1
 ```
 
 You should see some log ouput like this:
@@ -256,7 +256,7 @@ We use the same command for the second run:
 docker run -it --rm -p 8080:8080 -e CRAC_FILES_DIR=/crac/demo/0.0.1 --name demo \
   --mount source=cracvol,target=/crac \
   --cap-add CHECKPOINT_RESTORE --cap-add NET_ADMIN --cap-add SYS_PTRACE --cap-add SYS_ADMIN \
-  springdeveloper/demo:0.0.1
+  dev.local/demo:0.0.1
 ```
 
 You should now see some log ouput like this:
