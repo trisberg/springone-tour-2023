@@ -14,7 +14,6 @@ SpringOne Tour 2023 :: Scaling Your Spring Boot App to Zero
 ## Tools to install
 
 1. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
-1. [Carvel](https://carvel.dev/)
 1. [Helm](https://helm.sh/docs/intro/install/)
 1. [Knative CLI](https://knative.dev/docs/client/install-kn/)
 1. [Knative quickstart CLI plugin](https://github.com/knative-extensions/kn-plugin-quickstart#kn-plugin-quickstart)
